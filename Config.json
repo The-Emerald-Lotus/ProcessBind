@@ -1,0 +1,24 @@
+{
+  "Executables": [
+    {
+      "ExecutableName": "mongoose.exe",
+      "ExeImagePath": "C:\\Users\\Administrator\\Desktop\\ASA Save\\webserve\\",
+      "CpuCores": "2,3,4,5",
+      "MemPriority": "High"
+    },
+    {
+      "ExecutableName": "ArkAscendedServer.exe",
+      "ExeImagePath": "N:\\asatest\\island\\ShooterGame\\Binaries\\Win64\\",
+      "CpuCores": "16,17,18,19,20,21,22,23",
+      "MemPriority": "High"
+    },
+    {
+      "ExecutableName": "ArkAscendedServer.exe",
+      "ExeImagePath": "O:\\asatest\\island\\ShooterGame\\Binaries\\Win64\\",
+      "CpuCores": "10,11,12,13,14,15",
+      "MemPriority": "High"
+    }
+  ],
+  "MaxLogsToKeep": 2,
+  "SleepDurationSeconds": 5
+}
