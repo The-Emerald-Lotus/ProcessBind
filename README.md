@@ -1,12 +1,11 @@
 # ProcessBind
-**Overview**: *Watcher Script to Set Affinity and Priority of a running process with PowerShell.* <br>
+**Overview**: *Monitor and Set Affinity and/or Priority of a running process with PowerShell.* <br>
 **Requirements**: *PowerShell 5.0+* <br>
 **Version**: *1.0* <br>
-*This script will not run if you do not meet the PowerShell Version Requirements* <br>
 <br>
 **Detailed Description** <br>
-Allows for multiple processes with the same "ExecutableName" to be identified by checking the extracted Image Path of the running process
-and comparing it to a predefined Path: "ExeImagePath". If they are identical the Affinity and Priority are set by ProcessID and Logged to a time stamped file in the 'Logs' folder.
+Supports multiple processes with the same "ExecutableName" by checking the extracted 'Image Path' of the running process and comparing it to a predefined Path "ExeImagePath" in the Config.json file. 
+If they are identical the Affinity and Priority are set by ProcessID and Logged to a time stamped file in the created 'Logs' folder.
 <br>
 ## Setup
 1. Download the files and Place the folder in the directory of your choice.
