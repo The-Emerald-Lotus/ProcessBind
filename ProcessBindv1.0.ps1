@@ -141,17 +141,17 @@ while ($true) {
             }
         }
 
-		# Check if a process match was found for the current configuration...
-		if (-not $matchFound) {
-			$message = (Get-Date -Format "yyyy-MM-dd HH:mm:ss") + " - Process Not Found `nProcess: '$($exeConfig.ExecutableName)' Not Found Running At Path: '$($exeConfig.ExeImagePath)'`n"
-			# Check for message update...
-			$messageWithoutTimestamp = $message -replace '^.*\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} - '
-			# Check if the message for this configuration was already logged...
-			$configKey = "$($exeConfig.ExecutableName)-$($exeConfig.ExeImagePath)"
-			if ($lastPostedMessages[$configKey] -ne $messageWithoutTimestamp) {
-				Write-Host $message
-				Add-Content -Path $logFilePath -Value $message
-				$lastPostedMessages[$configKey] = $messageWithoutTimestamp
+        # Check if a process match was found for the current configuration...
+        if (-not $matchFound) {
+            $message = (Get-Date -Format "yyyy-MM-dd HH:mm:ss") + " - Process Not Found `nProcess: '$($exeConfig.ExecutableName)' Not Found Running At Path: '$($exeConfig.ExeImagePath)'`n"
+            # Check for message update...
+            $messageWithoutTimestamp = $message -replace '^.*\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} - '
+            # Check if the message for this configuration was already logged...
+            $configKey = "$($exeConfig.ExecutableName)-$($exeConfig.ExeImagePath)"
+            if ($lastPostedMessages[$configKey] -ne $messageWithoutTimestamp) {
+                Write-Host $message
+                Add-Content -Path $logFilePath -Value $message
+                $lastPostedMessages[$configKey] = $messageWithoutTimestamp
             }
         }
     }
