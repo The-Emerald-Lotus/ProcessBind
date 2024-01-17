@@ -61,3 +61,22 @@ If they are identical the Affinity and Priority are set by ProcessID and Logged 
   "SleepDurationSeconds": "Time to wait before next check (in seconds)."
 }
 ```
+>[!TIP]
+>**Run as service**
+><br>
+>1. Download [NSSM](https://nssm.cc/download) and place in system Path (usually C:\\)
+>2. Open Command Prompt and type `nssm install ProcessBind`
+>3. Under the Application tab set the following. <br>
+>+ Path: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` <br>
+>+ Startup directory: `Folder path for ProcessBindv1.0.ps1` <br>
+>+ Options: `.\ProcessBindv1.0.ps1`
+>4. Click Install service.
+><br>
+>
+>**Start Service**
+>1. Open Task Manager.
+>2. Look for a service named `ProcessBind`, right click and select `Start`.
+<br>
+
+>[!NOTE]
+>Run the powershell script before running it as a service to check your config file is correct.
