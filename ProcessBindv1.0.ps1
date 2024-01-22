@@ -13,7 +13,21 @@ $scriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $jsonConfigPath = Join-Path -Path $scriptDirectory -ChildPath "Config.json"
 
 # Load the JSON configuration file...
-$config = Get-Content -Raw -Path $jsonConfigPath | ConvertFrom-Json
+try {
+    $config = Get-Content -Raw -Path $jsonConfigPath | ConvertFrom-Json
+}
+catch {
+    Write-Host "Error loading the JSON configuration file: $_"
+    Pause
+    Exit
+}
+
+# Validate the JSON configuration file...
+if ($config -eq $null) {
+    Write-Host "Invalid JSON format in the configuration file. Please correct the JSON syntax and try again."
+    Pause
+    Exit
+}
 
 # Create a "Logs" folder if it doesn't exist...
 $logFolder = Join-Path -Path $scriptDirectory -ChildPath "Logs"
